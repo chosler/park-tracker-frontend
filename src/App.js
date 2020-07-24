@@ -23,9 +23,9 @@ class App extends React.Component {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path='/parks/:id' render={()=> <ParkPage />} />
+          <Route path='/parks/:id' component={ParkPage} />
           <Route path='/user/:id' render={()=> <UserPage />} />
-          <Route path='/parks' render={()=> <ParkIndex parks={this.state.parks}/>} />
+          <Route path='/parks' render={(routerProps)=> <ParkIndex parks={this.state.parks} {...routerProps}/>} />
           <Route exact path='/' render={()=> <Home />} />
         </Switch>
       </div>
