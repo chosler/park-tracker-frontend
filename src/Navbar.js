@@ -6,7 +6,7 @@ const Navbar = props => {
         <div className="navbar">
             <Link to="/">Home</Link>
             <Link to="/parks">Parks</Link>
-            <Link to="/user/:id">My Parks</Link>
+            <Link to="/users/:id">My Parks</Link>
             {/* <Link to="/login">Login</Link> */}
         </div>
     )
