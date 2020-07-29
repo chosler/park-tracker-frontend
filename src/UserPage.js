@@ -5,7 +5,7 @@ const UserPage = (props) => {
     // console.log(props.visited)
     return (
     <div className="user-page">
-        <UserParkCard userParks={props.visited} removeVisitedPark={props.removeVistedPark} comments={props.comments}/>
+        <UserParkCard userParks={props.visited} removeVisitedPark={props.removeVistedPark} comments={props.comments} handleNewComment={props.handleNewComment}/>
     </div>
     )
 }

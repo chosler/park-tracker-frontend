@@ -28,6 +28,7 @@ class CommentForm extends React.Component {
         .then(resp=>resp.json())
         .then(newComment=>{
           this.setState(initialState)
+          this.props.handleNewComment(newComment.data.attributes)
         })
       }
 

@@ -14,7 +14,7 @@ const UserParkCard = props => {
                 <ul className='comments'>{props.comments.filter(comment => comment.park_id === parseInt(userPark.attributes.park.id)).map(comment=> 
                     <li>{comment.comment_content}</li>)} 
                 </ul>
-                <CommentForm userId={userPark.attributes.user.id} parkId={userPark.attributes.park.id}/>
+                <CommentForm userId={userPark.attributes.user.id} parkId={userPark.attributes.park.id} handleNewComment={props.handleNewComment}/>
                 <button onClick={() => props.removeVisitedPark(userPark.id)}>Remove Visited Park</button>
                 </div>
             )}

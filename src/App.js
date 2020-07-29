@@ -47,6 +47,11 @@ class App extends React.Component {
     })
   }
 
+  handleNewComment=(newComment)=>{
+    this.setState({comments:[...this.state.comments, newComment]})
+    console.log(this.state.comments)
+  }
+
   render(){  
     // console.log(this.state.visited)
     return (
@@ -54,7 +59,7 @@ class App extends React.Component {
         <Navbar />
         <Switch>
         <Route path='/parks/:id' render={(routerProps)=><ParkPage {...routerProps} comments={this.state.comments}/>}/>
-          <Route path='/users/:id' render={(routerProps)=> <UserPage visited={this.state.visited} removeVistedPark={this.removeVistedPark} comments={this.state.comments} {...routerProps}/>} />
+          <Route path='/users/:id' render={(routerProps)=> <UserPage visited={this.state.visited} removeVistedPark={this.removeVistedPark} handleNewComment={this.handleNewComment} comments={this.state.comments} {...routerProps}/>} />
           <Route path='/parks' render={(routerProps)=> <ParkIndex parks={this.state.parks} {...routerProps} handleNewUserPark={this.handleNewUserPark} comments={this.state.comments}/>} />
           <Route exact path='/' render={()=> <Home />} />
         </Switch>
