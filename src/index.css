@@ -51,8 +51,8 @@ code {
   .mapContainer {
   position: relative;
   overflow: visible;
-  top: 0;
-  right: 0;
+  top: 50px;
+  right: 100px;
   left: 0;
   bottom: 0;
   }
