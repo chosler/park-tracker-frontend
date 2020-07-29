@@ -37,9 +37,16 @@ class ParkPage extends React.Component {
       style: 'mapbox://styles/mapbox/outdoors-v11',
       center: [lng, lat],
       zoom });
+      
+      var marker = new mapboxgl.Marker()
+      .setLngLat([lng, lat])
+      .addTo(map);
+
       this.map = map
+      this.marker=marker
     }
 
+    
   componentDidUpdate(){
     if (!this.state.mapIsLoaded) {
         return;
@@ -51,13 +58,14 @@ class ParkPage extends React.Component {
         ],
         essential: true 
         })
+    this.marker.setLngLat([this.state.lng, this.state.lat])
       }
    }
   
    render(){ 
     let filteredComments = this.props.comments.filter(comment => comment.park_id === parseInt(this.props.match.params.id))
-    console.log(filteredComments)
-     
+
+    console.log(this.map)
        return (
         <div className="park-page">
           {this.state.currentPage ? (
