@@ -1,17 +1,10 @@
 import React, { useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
-// import React from 'react';
-// import { render } from '@testing-library/react';
-// import { render } from '@testing-library/react';
-
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY21zdGllIiwiYSI6ImNrZDR0bjFueTFjcGwydmw1Z3lzMmU3cjkifQ.5GFJJQm0SbrFXDj79VlpMA';
 
 
 class ParkPage extends React.Component {
-
-    mapRef = React.createRef()
-
     state= {
         currentPage: null,
         lng: 5,
@@ -76,6 +69,7 @@ class ParkPage extends React.Component {
               <p>Activities: {this.state.currentPage.activity}</p>
               <p>Entrance Fee: ${this.state.currentPage.entrance_fee}</p>
               <p>Operating Hours: {this.state.currentPage.operating_hours}</p>
+              <p>{this.state.currentPage.description}</p>
         
               <ul className='comments'>{filteredComments.map(comment=> 
                 <li>{comment.comment_content}</li>)} 
