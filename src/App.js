@@ -6,6 +6,7 @@ import Home from './Home';
 import ParkIndex from './ParkIndex';
 import ParkPage from './ParkPage';
 import UserPage from './UserPage';
+// import Auth from './Auth';
 
 class App extends React.Component {
   state={
@@ -61,6 +62,7 @@ class App extends React.Component {
         <Route path='/parks/:id' render={(routerProps)=><ParkPage {...routerProps} comments={this.state.comments}/>}/>
           <Route path='/users/:id' render={(routerProps)=> <UserPage visited={this.state.visited} removeVistedPark={this.removeVistedPark} handleNewComment={this.handleNewComment} comments={this.state.comments} {...routerProps}/>} />
           <Route path='/parks' render={(routerProps)=> <ParkIndex parks={this.state.parks} {...routerProps} handleNewUserPark={this.handleNewUserPark} comments={this.state.comments}/>} />
+          {/* <Route path="/login" component={Auth}/> */}
           <Route exact path='/' render={()=> <Home />} />
         </Switch>
       </div>

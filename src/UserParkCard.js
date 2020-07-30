@@ -2,7 +2,7 @@ import React from 'react';
 import CommentForm from './CommentsForm';
 
 const UserParkCard = props => {
-    // console.log(props.userParks)
+    // console.log(props)
     
     return (
         <>

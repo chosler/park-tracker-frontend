@@ -65,7 +65,7 @@ class ParkPage extends React.Component {
    render(){ 
     let filteredComments = this.props.comments.filter(comment => comment.park_id === parseInt(this.props.match.params.id))
 
-    console.log(this.map)
+    // console.log(this.map)
        return (
         <div className="park-page">
           {this.state.currentPage ? (

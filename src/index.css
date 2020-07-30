@@ -69,3 +69,13 @@ code {
   bottom: 0;
   }
 
+  .map-view {
+    position: absolute;
+    height: 45rem;
+    width: 70rem;
+top: 100px;
+right: 0;
+left: 50px;
+bottom: 0;
+    }
+
