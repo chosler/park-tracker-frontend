@@ -6,13 +6,18 @@ import Home from './Home';
 import ParkIndex from './ParkIndex';
 import ParkPage from './ParkPage';
 import UserPage from './UserPage';
+import LoginForm from './LoginForm';
+import SignupForm from './SignupForm';
 
 class App extends React.Component {
   state={
     parks: [],
     visited: [],
-    userId: 1,
-    comments: []
+    userId: null,
+    comments: [],
+    currentUser: null,
+    searchTerm: '',
+    searchBy: 'By Name'
   }
 
   componentDidMount(){
@@ -49,18 +54,51 @@ class App extends React.Component {
 
   handleNewComment=(newComment)=>{
     this.setState({comments:[...this.state.comments, newComment]})
-    console.log(this.state.comments)
+    // console.log(this.state.comments)
   }
 
+  setUser = (response) => {
+    this.setState({
+      currentUser: response.user,
+      userId: response.user.id
+    }, () => {
+      localStorage.token = response.token
+      this.props.history.push("/parks")
+    })
+  }
+
+  logout = () => {
+    this.setState({
+      currentUser: null
+    }, () => {
+      localStorage.removeItem("token")
+      this.props.history.push("/login")
+    })
+  }
+
+  handleSearchChange = (event) => {
+    this.setState({
+     searchTerm: event.target.value
+    })
+   }
+
+   toggleSearchType = (e) => {
+     this.setState({
+       searchBy: e.target.value
+     })
+   }
+
   render(){  
-    // console.log(this.state.visited)
+    console.log(this.state.searchBy)
     return (
       <div className="App">
-        <Navbar />
+        <Navbar currentUser={this.state.currentUser} logout={this.logout}/>
         <Switch>
-        <Route path='/parks/:id' render={(routerProps)=><ParkPage {...routerProps} comments={this.state.comments}/>}/>
-          <Route path='/users/:id' render={(routerProps)=> <UserPage visited={this.state.visited} removeVistedPark={this.removeVistedPark} handleNewComment={this.handleNewComment} comments={this.state.comments} {...routerProps}/>} />
-          <Route path='/parks' render={(routerProps)=> <ParkIndex parks={this.state.parks} {...routerProps} handleNewUserPark={this.handleNewUserPark} comments={this.state.comments}/>} />
+          <Route path='/parks/:id' render={(routerProps)=><ParkPage {...routerProps} comments={this.state.comments}/>}/>
+          <Route path='/users/:userId' render={(routerProps)=> <UserPage visited={this.state.visited} removeVistedPark={this.removeVistedPark} handleNewComment={this.handleNewComment} comments={this.state.comments} {...routerProps}/>} />
+          <Route path='/parks' render={(routerProps)=> <ParkIndex parks={this.state.parks} {...routerProps} handleNewUserPark={this.handleNewUserPark} comments={this.state.comments} searchTerm={this.state.searchTerm} handleSearchChange={this.handleSearchChange} toggleSearchType={this.toggleSearchType} searchBy={this.state.searchBy}/>} />
+          <Route path="/login" render={() => <LoginForm  setUser={this.setUser}/>}/>
+          <Route path="/signup" render={() => <SignupForm setUser={this.setUser}/>}/>
           <Route exact path='/' render={()=> <Home />} />
         </Switch>
       </div>
