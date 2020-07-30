@@ -26,7 +26,7 @@ code {
 .park-card-image {
   justify-self: center;
   height: 12rem;
-  width: auto;
+  width: 18rem;
   overflow: hidden;
 }
 
@@ -45,6 +45,10 @@ code {
 .comments li {
   margin: 2px 0;
   letter-spacing: 0.2px;
+}
+
+.park-page {
+  margin: 5px;
 }
 
 .sidebarStyle {
@@ -69,3 +73,39 @@ code {
   bottom: 0;
   }
 
+  .weatherIcon {
+    background-color: lightblue;
+  }
+
+  .weatherBox {
+    margin: 50px;
+    padding: 10px;
+    align-self: center;
+    align-items: center;
+    background-color: burlywood;
+    border-width: medium;
+    border: black;
+    border-style: solid;
+  }
+
+  .weatherData {
+    margin-left: 20px;
+  }
+
+  .forecast-main {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .forecast-card {
+    float: left;
+    align-self: center;
+    align-items: center;
+    height: 470px;
+    width: 14%;
+    padding: 1 1px;
+    /* border-width: 1px; */
+    border: black;
+    /* border-style: solid; */
+  }

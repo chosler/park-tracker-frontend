@@ -3,7 +3,7 @@ import mapboxgl from 'mapbox-gl';
 // import React from 'react';
 // import { render } from '@testing-library/react';
 // import { render } from '@testing-library/react';
-
+import WeatherData from './WeatherData'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY21zdGllIiwiYSI6ImNrZDR0bjFueTFjcGwydmw1Z3lzMmU3cjkifQ.5GFJJQm0SbrFXDj79VlpMA';
 
@@ -59,6 +59,8 @@ class ParkPage extends React.Component {
         essential: true 
         })
     this.marker.setLngLat([this.state.lng, this.state.lat])
+    this.marker.setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML('<h3>' + this.state.currentPage.name + '</h3><p>' + `Lat: ` + this.state.lat  + ', Long: ' + this.state.lng + '</p>'))
       }
    }
   
@@ -76,7 +78,7 @@ class ParkPage extends React.Component {
               <p>Activities: {this.state.currentPage.activity}</p>
               <p>Entrance Fee: ${this.state.currentPage.entrance_fee}</p>
               <p>Operating Hours: {this.state.currentPage.operating_hours}</p>
-        
+                <WeatherData lat={this.state.lat} lng={this.state.lng} name={this.state.currentPage.name}/>
               <ul className='comments'>{filteredComments.map(comment=> 
                 <li>{comment.comment_content}</li>)} 
              </ul>
@@ -85,9 +87,6 @@ class ParkPage extends React.Component {
               : ( <div>Loading..</div>)
           }
           <div>
-            <div className='sidebarStyle'>
-            <div>Park Longitude: {this.state.lng} | Latitude: {this.state.lat} </div>
-            </div>
             <div ref={el => this.mapContainer = el} className='mapContainer' />
             </div>
         </div>
