@@ -34,8 +34,16 @@ class App extends React.Component {
   }
 
   handleNewUserPark = (newUserPark) => {
-    this.setState({ visited: [...this.state.visited, newUserPark.data] })
-  }
+    // this.state.visited.map(userPark => {
+    //   if(userPark.attributes.park.id === newUserPark.data.attributes.park.id)
+    //   {
+    //     alert("This park is already on your list!")
+    //   }
+    //   else{
+        this.setState({ visited: [...this.state.visited, newUserPark.data] })
+      }
+  //   })
+  // }
 
   removeVistedPark=(id)=>{
     fetch(`http://localhost:3000/api/v1/user_parks/${id}`, {
@@ -65,6 +73,15 @@ class App extends React.Component {
       localStorage.token = response.token
       this.props.history.push("/parks")
     })
+    Promise.all([fetch(`http://localhost:3000/api/v1/user_parks`), fetch(`http://localhost:3000/api/v1/comments`)])
+    .then(([res1, res2]) => {
+      return Promise.all([res1.json(), res2.json()])
+    })
+    .then(([res1, res2]) => {
+      {let matched = res1.data.filter(re1 => re1.attributes.user.id === this.state.userId)
+        this.setState({visited: matched})}
+      this.setState({comments: res2})
+    })
   }
 
   logout = () => {
@@ -89,14 +106,16 @@ class App extends React.Component {
    }
 
   render(){  
+
     // console.log(this.state.searchBy)
+
     return (
       <div className="App">
         <Navbar currentUser={this.state.currentUser} logout={this.logout}/>
         <Switch>
           <Route path='/parks/:id' render={(routerProps)=><ParkPage {...routerProps} comments={this.state.comments}/>}/>
           <Route path='/users/:userId' render={(routerProps)=> <UserPage visited={this.state.visited} removeVistedPark={this.removeVistedPark} handleNewComment={this.handleNewComment} comments={this.state.comments} {...routerProps}/>} />
-          <Route path='/parks' render={(routerProps)=> <ParkIndex parks={this.state.parks} {...routerProps} handleNewUserPark={this.handleNewUserPark} comments={this.state.comments} searchTerm={this.state.searchTerm} handleSearchChange={this.handleSearchChange} toggleSearchType={this.toggleSearchType} searchBy={this.state.searchBy}/>} />
+          <Route path='/parks' render={(routerProps)=> <ParkIndex parks={this.state.parks} {...routerProps} handleNewUserPark={this.handleNewUserPark} comments={this.state.comments} searchTerm={this.state.searchTerm} handleSearchChange={this.handleSearchChange} toggleSearchType={this.toggleSearchType} searchBy={this.state.searchBy} userId={this.state.userId}/>} />
           <Route path="/login" render={() => <LoginForm  setUser={this.setUser}/>}/>
           <Route path="/signup" render={() => <SignupForm setUser={this.setUser}/>}/>
           <Route exact path='/' render={()=> <Home />} />
