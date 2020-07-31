@@ -12,15 +12,16 @@ const WeatherForeCard = props => {
     }
     // console.log(convertDateTime(props.dt));
     return(
-        
         <div className='forecast-card'>
-            <h4>{convertDateTime(props.dt)}</h4>
-            <img className='weatherIcon' src={`http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`} alt={props.mainCond} />
-            <p>High:</p><h4>{props.temp.max}</h4>
-            <p>Low:</p><h4>{props.temp.min}</h4>
-            <p>Precipation:</p><h4>{props.pop}%</h4>
-        </div>
-        
+            <h4 className='dateTime'>{convertDateTime(props.dt)}</h4>
+            <img className='weatherForecastIcon' src={`http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`} alt={props.mainCond} />
+            <p className='weatherText'>High:</p>
+                <h4 className='weatherResult'>{props.temp.max}</h4>
+            <p className='weatherText'>Low:</p>
+                <h4 className='weatherResult'>{props.temp.min}</h4>
+            <p className='weatherTextPrec'>Precipation:</p>
+                <h4 className='weatherResultPrec'>{props.pop}%</h4>
+        </div>        
     )
 }
 

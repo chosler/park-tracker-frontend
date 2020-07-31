@@ -66,29 +66,29 @@ class ParkPage extends React.Component {
 
     // console.log(this.map)
        return (
-        <div className="park-page">
+        <>
           {this.state.currentPage ? (
-              <>
-              <h1>{this.state.currentPage.name}</h1>
-              <h4>{this.state.currentPage.state}</h4>
-              <img src={this.state.currentPage.img_urls[0]} alt={this.state.currentPage.name} className="park-image"/>
-              <p>Activities: {this.state.currentPage.activity}</p>
-              <p>Entrance Fee: ${this.state.currentPage.entrance_fee}</p>
-              <p>Operating Hours: {this.state.currentPage.operating_hours}</p>
-              <p>{this.state.currentPage.description}</p>
+              <div className="park-page">
+                <img className="park-page-image" src={this.state.currentPage.img_urls[0]} alt={this.state.currentPage.name}/>
+                <h1 className='park-page-name'>{this.state.currentPage.name}</h1>
+                <h4 className='park-page-state'>{this.state.currentPage.state}</h4>
+                <p className='park-page-description'>{this.state.currentPage.description}</p>
+                <p className='park-page-fee'>Entrance Fee: ${this.state.currentPage.entrance_fee}</p>
+                <p className='park-page-hours'>Operating Hours: {this.state.currentPage.operating_hours}</p>
+                <p className='park-page-activities'>Activities: {this.state.currentPage.activity}</p>
+                <h4 className='park-page-comments'>Comments:</h4>
+                <ul className='park-page-comments-list'>{filteredComments.map(comment=> 
+                  <li>{comment.comment_content}</li>)} 
+                </ul>
                 <WeatherData lat={this.state.lat} lng={this.state.lng} name={this.state.currentPage.name}/>
-        
-              <ul className='comments'>{filteredComments.map(comment=> 
-                <li>{comment.comment_content}</li>)} 
-             </ul>
-              </>
+              </div>
               ) 
               : ( <div>Loading..</div>)
           }
           <div>
-            <div ref={el => this.mapContainer = el} className='mapContainer' />
-            </div>
-        </div>
+            <div className='mapBox' ref={el => this.mapContainer = el} />
+          </div>
+        </>
     )}
 }
 

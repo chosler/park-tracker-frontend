@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap');
+
+
+.park-card {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 20rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px #4be064
+}
+
+.park-card-image {
+  justify-self: center;
+  height: 12rem;
+  width: 18rem;
+  overflow: hidden;
+}
+
+
+
+/* .comments {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 10px;
+  font-size: 0.85rem;
+}
+
+.comments li {
+  margin: 2px 0;
+  letter-spacing: 0.2px;
+} */
+
+/* park-page main*/
+.park-page {
+font-family: 'Raleway', sans-serif;
+  /* margin: 5px; */
+  margin-top: 80px;
+  margin-left: 30px;
+  margin-right: 30px;
+  /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; */
+}
+
+.park-page-image {  
+    width: 70rem;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.park-page-name{
+    color: #032E50;
+    font-size: 70px;
+    font-weight: 700;
+    text-align: center;
+}
+.park-page-state{
+    color: #032E50;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    margin-top: -20px;
+}
+.park-page-description{
+    color: #03375f;
+    font-size: 20px;
+    /* margin-top: -10px; */
+    font-weight: 400;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.park-page-fee{
+    color: #053d68;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+.park-page-hours{
+    color: #053d68;
+    font-size: 20px;
+    margin-top: -10px;
+    font-weight: 300;
+    text-align: center;
+}
+.park-page-activities{
+    color: #053d68;
+    font-size: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-weight: 200;
+    text-align: center;
+}
+.park-page-comments {
+    color: #053d68;
+    margin-left: 40px;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+.park-page-comments-list {
+    list-style-type: none;
+    margin-left: 50px;
+  }
+  .park-page-comments-list li {
+    list-style-type: none;
+    color: #073c64;
+    font-weight: 300;
+    margin: 2px 0;
+    letter-spacing: 0.2px;
+    
+  }
+
+/* park-page weather*/
+  .weatherBox {
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    margin-top: 40px;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 15px;
+    align-self: center;
+    align-items: center;
+    background-color: rgba(173, 216, 230, 0.315);
+    color: rgba(32, 106, 131, 0.952);;
+    height: 600px;
+    width: 820px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .weather-statement{
+    color: rgba(16, 59, 73, 0.952);
+    font-weight: 700;
+    margin-left: 20px;
+    margin-top: 40px;
+    font-size: 26px;
+  }
+  .weatherIcon {
+    margin-bottom: -30px;
+    margin-top: -20px;
+  }
+  .current-weather {
+    align-content: center;
+  }
+  .currentWeatherData {
+    margin-left: 30px;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .weatherDataName {
+    margin-left: 80px;
+    display: inline-block;
+  }
+  .weatherData {
+    margin-left: 10px;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .seven-day-text {
+    color: rgba(16, 59, 73, 0.952);
+    font-weight: 600;
+    margin-left: 30px;
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  .forecast-main {
+    margin-top: -20px;
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .forecast-card {
+    float: left;
+    align-self: center;
+    align-items: center;
+    /* height: 470px; */
+    width: 14%;
+    padding: 1 1px;
+    /* border-width: 1px; */
+    border: black;
+    /* border-style: solid; */
+  }
+  .dateTime{
+    /* margin-top: -10px; */
+    margin-left: 45px;
+    font-weight: 700;
+  }
+  .weatherForecastIcon {
+    margin-bottom: -30px;
+    margin-left: 15px;
+    margin-top: -30px;
+    size: 80%
+  }
+  .weatherText{
+    margin-left: 45px;
+    font-weight: 300;
+  }
+  .weatherTextPrec{
+    margin-left: 24px;
+    font-weight: 300;
+  }
+  .weatherResult{
+    margin-left: 45px;
+    font-weight: 600;
+    margin-top: -10px;
+  }
+  .weatherResultPrec{
+    margin-left: 55px;
+    font-weight: 600;
+    margin-top: -10px;
+  }
+
+  .mapBox{
+    position: relative;
+    overflow: visible;
+    height: 500px;
+    width: 1000px;
+    top: 30px;
+    /* left: 220px; */
+    bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+
+
+
+
+
+
+.sidebarStyle {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  background-color: #404040;
+  color: #ffffff;
+  z-index: 1 !important;
+  padding: 6px;
+  font-weight: bold;
+  }
+   
+ 
+
+
+  .map-view {
+    position: absolute;
+    height: 45rem;
+    width: 70rem;
+top: 100px;
+right: 0;
+left: 50px;
+bottom: 0;
+    }

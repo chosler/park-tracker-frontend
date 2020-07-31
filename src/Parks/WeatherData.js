@@ -36,15 +36,17 @@ class WeatherData extends React.Component{
        return(
            <div>
            <div className="weatherBox">
-                <h3>The current weather conditions at {this.props.name} are:</h3>
+                <h3 className='weather-statement'>The current weather conditions at {this.props.name} are:</h3>
                <img className='weatherIcon' src={`http://openweathermap.org/img/wn/${this.state.icon}@2x.png`} alt={this.state.mainCond} />
-                <h3>{this.state.mainCond}</h3>
-               <p>Current temperature: </p><h3 className='weatherData'>{this.state.currTemp}°F</h3>
-               <p>Feels like: </p><h3 className='weatherData'>{this.state.feelsLike}°F</h3>
-               {/* <p>High: </p><h3 className='weatherData'>{this.state.sevenDayFore[0][0].temp.max}°F</h3>
-               <p>Low: </p><h3 className='weatherData'>{this.state.sevenDayFore[0][0].temp.min}°F</h3> */}
+               <div className='current-weather'>
+                   <h3 className='currentWeatherData'>{this.state.mainCond}</h3>
+                   <p className='weatherDataName'>Current temperature: </p>
+                   <h3 className='weatherData'>{this.state.currTemp}°F</h3>
+                   <p className='weatherDataName'>Feels like: </p>
+                   <h3 className='weatherData'>{this.state.feelsLike}°F</h3>
+               </div>
+               <h4 className='seven-day-text'>Seven Day Forecast</h4>
                <main className='forecast-main'>
-                   <h4>Seven Day Forecast</h4>
                {this.state.sevenDayFore.slice(1).map(day => <WeatherForeCard key={day.index} {...day}/> 
                )}
                </main>
