@@ -38,13 +38,25 @@ class LoginForm extends React.Component {
 
   render(){
     return (
-      <div className="center-form">
-        <form className="auth-form" onSubmit={this.handleSubmit}>
-          <input name="user_name" value={this.state.user_name} onChange={this.handleChange}placeholder="username"/>
-          <input name="password" value={this.state.password} type="password"  onChange={this.handleChange}placeholder="password"/>
-          <button className="login" type="submit">Log In</button>
-        </form>
-      </div>
+        <div className='login-page'>
+            {/* <video autoPlay="autoplay" muted
+      // loop="loop" 
+      className='login-video'>
+             <source src={'https://firebasestorage.googleapis.com/v0/b/hello-1caa7.appspot.com/o/camphaledronefall18_ryx9sww7l__D4k.mp4?alt=media&token=22bf9a46-99cc-4d2d-a60d-e6063623f5d7'} type="video/mp4" />
+            </video> */}
+            <img className='login-video' src='https://firebasestorage.googleapis.com/v0/b/hello-1caa7.appspot.com/o/Screen%20Shot%202020-07-30%20at%2010.36.27%20PM.png?alt=media&token=f3d1303f-508e-476f-8465-7fe848e3dadb'/>
+            <div className="login-container">
+                <h2 class="sign-in-title">Sign In</h2>
+
+                <form onSubmit={this.handleSubmit}>
+                    <div className="signin-form" >
+                        <input className="signin-input" name="user_name" value={this.state.user_name} onChange={this.handleChange}placeholder="username"/>
+                        <input className="signin-input" name="password" value={this.state.password} type="password"  onChange={this.handleChange}placeholder="password"/>
+                    </div>
+                    <button className="login-submit" type="submit">Log In</button>
+                </form>
+            </div>
+        </div>
     )
   }
   

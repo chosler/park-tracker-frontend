@@ -89,7 +89,7 @@ class App extends React.Component {
    }
 
   render(){  
-    console.log(this.state.searchBy)
+    // console.log(this.state.searchBy)
     return (
       <div className="App">
         <Navbar currentUser={this.state.currentUser} logout={this.logout}/>

@@ -7,7 +7,7 @@ class SignupForm extends React.Component {
     password: "",
     passwordConfirm: "",
     name: "",
-    profile_pic: ""
+    // profile_pic: ""
   }
 
   handleChange = (event) => {
@@ -28,7 +28,7 @@ class SignupForm extends React.Component {
             body: JSON.stringify({
                 user_name: this.state.user_name, 
                 name: this.state.name,
-                profile_pic: this.state.profile_pic,
+                // profile_pic: this.state.profile_pic,
                 password: this.state.password
             })
           })
@@ -48,16 +48,26 @@ class SignupForm extends React.Component {
   render() {
     //   console.log(this.state)
     return (
-      <div className="center-form">
-        <form className="auth-form" onSubmit={this.handleSubmit}>
-          <input name="user_name" value={this.state.username} onChange={this.handleChange} placeholder="username"/>
-          <input name="password" value={this.state.password} type="password" onChange={this.handleChange} placeholder="password"/>
-          <input name="passwordConfirm" value={this.state.passwordConfirm} type="password"  onChange={this.handleChange}placeholder="password confirmation"/>
-          <input name="name" value={this.state.name} onChange={this.handleChange} placeholder="Your Name"/>
-          <input name="profile_pic" value={this.state.profile_pic} onChange={this.handleChange} placeholder="add link to your profile picture"/>
-          <button className="login" type="submit">Sign Up</button>
-        </form>
-      </div>
+        <div className='signup-page'>
+             {/* <video autoPlay="autoplay" muted
+      // loop="loop" 
+      className='signup-video'>
+             <source src={'https://firebasestorage.googleapis.com/v0/b/hello-1caa7.appspot.com/o/Sea%20-%2038971.mp4?alt=media&token=23a3940d-89f9-4658-a3cf-af5c3fc068a9'} type="video/mp4" />
+            </video> */}
+            <img className='signup-video' src='https://firebasestorage.googleapis.com/v0/b/hello-1caa7.appspot.com/o/ocean.png?alt=media&token=037d1891-43cb-4c6a-be61-44ac13361a6b'/>
+            <div className="signup-container">
+                <h2 class="sign-up-title">Sign Up</h2>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="signup-form">
+                        <input className="signup-input" name="user_name" value={this.state.username} onChange={this.handleChange} placeholder="username"/>
+                        <input className="signup-input" name="password" value={this.state.password} type="password" onChange={this.handleChange} placeholder="password"/>
+                        <input className="signup-input" name="passwordConfirm" value={this.state.passwordConfirm} type="password"  onChange={this.handleChange} placeholder="password confirmation"/>
+                        <input className="signup-input" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Your Name"/>
+                    </div>
+                    <button className="signup-submit" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
     ) 
   }
 }

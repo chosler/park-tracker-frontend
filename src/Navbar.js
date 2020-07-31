@@ -6,12 +6,10 @@ const Navbar = props => {
     // console.log(props)
     return (
         <div className="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/parks">Parks</Link>
-            <Link to="/users/:id">My Parks</Link>
+            <Link to="/" className='nav-menu'>Home</Link>
+            <Link to="/parks" className='nav-menu'>Parks</Link>
+            <Link to="/users/:id" className='nav-menu'>My Parks</Link>
             <UserControls logout={props.logout} currentUser={props.currentUser} />
-
-            {/* <Link to="/login">Login</Link> */}
         </div>
     )
 }
