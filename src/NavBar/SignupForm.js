@@ -56,7 +56,7 @@ class SignupForm extends React.Component {
             </video> */}
             <img className='signup-video' src='https://firebasestorage.googleapis.com/v0/b/hello-1caa7.appspot.com/o/ocean.png?alt=media&token=037d1891-43cb-4c6a-be61-44ac13361a6b'/>
             <div className="signup-container">
-                <h2 class="sign-up-title">Sign Up</h2>
+                <h2 className="sign-up-title">Sign Up</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
                         <input className="signup-input" name="user_name" value={this.state.username} onChange={this.handleChange} placeholder="username"/>

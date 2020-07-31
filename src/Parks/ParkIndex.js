@@ -16,17 +16,19 @@ class ParkIndex extends React.Component {
     if (this.props.searchBy === 'By Name')
     {let cards = this.props.parks.filter(card => card.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()))
       let sortedCard = cards.sort((a, b) => a.name.localeCompare(b.name))
+      
       return(
         <>
-       {sortedCard.map (park=><ParkCard key={park.id} {...park} push={this.props.history.push} handleNewUserPark={this.props.handleNewUserPark} comments={this.props.comments} userId={this.props.userId}/>)}
+       {sortedCard.map (park=><ParkCard key={park.id} {...park} push={this.props.history.push} handleNewUserPark={this.props.handleNewUserPark} comments={this.props.comments} userId={this.props.userId} visited={this.props.visited}/>)}
        </>
       )
     }else{
       let cards = this.props.parks.filter(card => card.state.toLowerCase().includes(this.props.searchTerm.toLowerCase()))
       let sortedCard = cards.sort((a, b) => a.name.localeCompare(b.name))
+      
       return(
         <>
-       {sortedCard.map (park=><ParkCard key={park.id} {...park} push={this.props.history.push} handleNewUserPark={this.props.handleNewUserPark} comments={this.props.comments} userId={this.props.userId}/>)}
+       {sortedCard.map (park=><ParkCard key={park.id} {...park} push={this.props.history.push} handleNewUserPark={this.props.handleNewUserPark} comments={this.props.comments} userId={this.props.userId} visited={this.props.visited}/>)}
        </>
       )
     }
