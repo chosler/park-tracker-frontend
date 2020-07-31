@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
-import Navbar from './Navbar';
+import Navbar from './NavBar/Navbar';
 import Home from './Home';
-import ParkIndex from './ParkIndex';
-import ParkPage from './ParkPage';
-import UserPage from './UserPage';
-import LoginForm from './LoginForm';
-import SignupForm from './SignupForm';
+import ParkIndex from './Parks/ParkIndex';
+import ParkPage from './Parks/ParkPage';
+import UserPage from './User/UserPage';
+import LoginForm from './NavBar/LoginForm';
+import SignupForm from './NavBar/SignupForm';
 
 class App extends React.Component {
   state={
