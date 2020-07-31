@@ -18,7 +18,7 @@ class ParkIndex extends React.Component {
       let sortedCard = cards.sort((a, b) => a.name.localeCompare(b.name))
       return(
         <>
-       {sortedCard.map (park=><ParkCard key={park.id} {...park} push={this.props.history.push} handleNewUserPark={this.props.handleNewUserPark} comments={this.props.comments}/>)}
+       {sortedCard.map (park=><ParkCard key={park.id} {...park} push={this.props.history.push} handleNewUserPark={this.props.handleNewUserPark} comments={this.props.comments} userId={this.props.userId}/>)}
        </>
       )
     }else{
@@ -26,7 +26,7 @@ class ParkIndex extends React.Component {
       let sortedCard = cards.sort((a, b) => a.name.localeCompare(b.name))
       return(
         <>
-       {sortedCard.map (park=><ParkCard key={park.id} {...park} push={this.props.history.push} handleNewUserPark={this.props.handleNewUserPark} comments={this.props.comments}/>)}
+       {sortedCard.map (park=><ParkCard key={park.id} {...park} push={this.props.history.push} handleNewUserPark={this.props.handleNewUserPark} comments={this.props.comments} userId={this.props.userId}/>)}
        </>
       )
     }
