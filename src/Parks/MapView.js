@@ -34,7 +34,7 @@ class MapView extends React.Component {
     // this.displayMarkers()
     return (
         <> 
-            <div ref={el => this.mapContainer = el} className='map-view' />
+            <div className='map-view' ref={el => this.mapContainer = el} />
         </>
     )
   }

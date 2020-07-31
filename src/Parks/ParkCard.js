@@ -1,4 +1,6 @@
 import React from 'react';
+import Plus from './plus-square.svg';
+import Info from './info.svg';
 
 class ParkCard extends React.Component {
   
@@ -17,26 +19,29 @@ class ParkCard extends React.Component {
               .then(resp=>resp.json()
               .then(data=>{
                 this.props.handleNewUserPark(data)
+                // console.log(data)
                 alert('Park successfully added!')
+                this.newPark=data
               })
               )
             }
  
 
   render(){
-    console.log(this.props.userId);
+    // this.newPark ? (console.log(this.newPark.data.attributes.park)) : console.log('non')
     const {name, state, img_urls, id, push} = this.props
     return (
         <div className="park-card">
-          <h2>{name}</h2>
-          <h4>{state}</h4>
-          <img src={img_urls[0]} alt={name} className="park-card-image"/>
-          <ul className='comments'>{this.props.comments.filter(comment => comment.park_id === parseInt(id)).map(comment=> 
+          {/* {this.Park? (<button>X</button>) : (<img src={Plus} className="add-button" onClick={this.handleAdd}/>)} */}
+          <img src={Info} onClick={()=> push(`/parks/${id}`)}/>
+           <img src={Plus} className="add-button" onClick={this.handleAdd}/>
+          <h2 className="park-card-name">{name.toUpperCase()}</h2>
+          <h4 className="park-card-state">{state}</h4>
+          <img className="park-card-image" src={img_urls[0]} alt={name}/>
+          <p className='comment-dec'>Visitor Comments:</p>
+          <ul className='card-comments'>{this.props.comments.filter(comment => comment.park_id === parseInt(id)).map(comment=> 
             <li>{comment.comment_content}</li>)} 
           </ul>
-          <button onClick={()=> push(`/parks/${id}`)}>More Info</button>
-          <button onClick={this.handleAdd}>+</button>
-          <br></br>
         </div>
     )
   }

@@ -2,6 +2,8 @@ import React from 'react';
 import ParkCard from './ParkCard';
 import MapView from './MapView';
 import SearchBar from './SearchBar'
+import MapOption from './map-marker.gif'
+import CardOption from './icon-list-view.gif'
 
 class ParkIndex extends React.Component {  
   state={
@@ -40,11 +42,10 @@ class ParkIndex extends React.Component {
   }
 
   render(){
-    
     return (
-      <div className="park-index">
+      <div className="park-index-page">
         <SearchBar handleSearchChange={this.props.handleSearchChange} searchTerm={this.props.searchTerm} toggleSearchType={this.props.toggleSearchType} searchBy={this.props.searchBy}/>
-        <button className='mapview-button' onClick={this.toggleDisplay}>{this.state.mapDisplay ? 'Card View' : 'Map View'}</button>
+        <div className='mapview-button' onClick={this.toggleDisplay}>{this.state.mapDisplay ? <img className='card-option' src={CardOption}/> : <img className='map-option' src={MapOption}/>}</div>
         {this.state.mapDisplay ? this.renderMap() : this.renderCard()}
       </div>
   )
