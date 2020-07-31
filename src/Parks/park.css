@@ -1,37 +1,157 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap');
 
+.user-page{
+    font-family: 'Raleway', sans-serif;
+    margin-top: 80px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.remove-button{
+    display: inline-block;
+    color: #032E50;
+    margin-left: 18.5rem;
+    /* margin-top: -31px; */
+}
+.usercard-comments {
+    list-style-type: none;
+    text-align: right;
+    padding-right: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #2f5069f8;
+    /* margin-top: -20px; */
+  }
+  .comments-form{
+    text-align: left;
+    padding-left: 5px;
+    /* width: 500px; */
+  }
+  .comment-bar{
+    /* display: inline; */
+    width: 260px;
+  }
+  .comment-submit{
+    /* display: inline; */
+    /* width: 200px; */
+    height: 25px;
+    /* margin-top: 10px; */
+  }
 
+
+/* park index */
+.park-index-page{
+    font-family: 'Raleway', sans-serif;
+    margin-top: 80px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.search-bar-options{
+    margin-left: 500px;
+    width: 120px;
+    height: 35px;
+}
+.search-input{
+    margin-left: 10px;
+    width: 600px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.mapview-button{
+    margin-left: 10px;
+    width: 10px;
+}
+.map-option{
+    width:35px;
+    animation-play-state: paused;
+}
+.card-option{
+    width:35px
+}
+
+
+/* park cards */
 .park-card {
   text-align: center;
-  border: grey solid 1px;
+  border: rgba(16, 59, 73, 0.952);
+  border-style: solid;
   padding: 1rem;
   width: 20rem;
   height: 25rem;
   display: inline-grid;
   margin: 1rem 2rem;
-  box-shadow: 3px 4px #4be064
 }
-
+.more-info-button{
+    color: #032E50;
+    display: inline-block;
+    /* margin-top: -20px; */
+}
+.add-button{
+    display: inline-block;
+    color: #032E50;
+    margin-left: 18.5rem;
+    margin-top: -31px;
+}
+.park-card-name{
+    color: #032E50;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: -2px;
+    text-align: center;
+}
+.park-card-state{
+    color: #2f5069f8;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: -20px;
+    text-align: center;
+}
 .park-card-image {
   justify-self: center;
   height: 12rem;
-  width: 18rem;
+  width: 20rem;
+  margin-top: -20px;
   overflow: hidden;
 }
+.comment-dec {
+    list-style-type: none;
+    text-align: left;
+    padding-left: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #033861f8;
+    /* margin-top: -20px; */
+  }
+.card-comments {
+    list-style-type: none;
+    text-align: right;
+    padding-right: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #2f5069f8;
+    margin-top: -20px;
+  }
+  .comments li {
+    margin: 2px 0;
+    letter-spacing: 0.2px;
+  }
 
 
+/* map container */
+.map-view {
+    position: relative;
+    height: 45rem;
+    width: 90rem;
+    top: 10px;
+    /* display: block; */
+    /* margin-left: auto; */
+    margin-right: 80px;
+    }
 
-/* .comments {
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 10px;
-  font-size: 0.85rem;
-}
-
-.comments li {
-  margin: 2px 0;
-  letter-spacing: 0.2px;
-} */
 
 /* park-page main*/
 .park-page {
@@ -47,8 +167,8 @@ font-family: 'Raleway', sans-serif;
 }
 
 .park-page-image {  
-    width: 70rem;
-    height: auto;
+    width: auto;
+    height: 30rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -69,8 +189,8 @@ font-family: 'Raleway', sans-serif;
 }
 .park-page-description{
     color: #03375f;
-    font-size: 20px;
-    /* margin-top: -10px; */
+    font-size: 23px;
+    margin-top: 50px;
     font-weight: 400;
     margin-left: 60px;
     margin-right: 60px;
@@ -79,6 +199,7 @@ font-family: 'Raleway', sans-serif;
     color: #053d68;
     font-size: 20px;
     font-weight: 300;
+    margin-top: 50px;
     text-align: center;
 }
 .park-page-hours{
@@ -90,15 +211,16 @@ font-family: 'Raleway', sans-serif;
 }
 .park-page-activities{
     color: #053d68;
-    font-size: 15px;
+    font-size: 18px;
     margin-left: 50px;
     margin-right: 50px;
+    margin-top: 50px;
     font-weight: 200;
     text-align: center;
 }
 .park-page-comments {
     color: #053d68;
-    margin-left: 40px;
+    margin-left: 60px;
     margin-top: 50px;
     font-size: 20px;
     font-weight: 600;
@@ -254,12 +376,3 @@ font-family: 'Raleway', sans-serif;
  
 
 
-  .map-view {
-    position: absolute;
-    height: 45rem;
-    width: 70rem;
-top: 100px;
-right: 0;
-left: 50px;
-bottom: 0;
-    }

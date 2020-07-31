@@ -61,13 +61,16 @@ class App extends React.Component {
   }
 
   setUser = (response) => {
-    this.setState({
-      currentUser: response.user,
-      userId: response.user.id
-    }, () => {
-      localStorage.token = response.token
-      this.props.history.push("/parks")
-    })
+      this.setState({
+        currentUser: response.user,
+        userId: response.user.id
+      },
+       () => {
+        // let jtwTok = response.headers.get('Authorization')
+        localStorage.setItem("token", response.token )
+        this.props.history.push("/parks")
+      })
+    
     Promise.all([fetch(`http://localhost:3000/api/v1/user_parks`), fetch(`http://localhost:3000/api/v1/comments`)])
     .then(([res1, res2]) => {
       return Promise.all([res1.json(), res2.json()])
@@ -78,14 +81,38 @@ class App extends React.Component {
       this.setState({comments: res2})
     })
   }
+  
+  // checkLogIn=()=>{
+  //   const token = localStorage.token
+  //   console.log(token)
+  //   if(token){
+  //     fetch("http://localhost:3001/api/v1/auto_login", {
+  //       headers: {
+  //         "Authorization": token
+  //       }
+  //     })
+  //     .then(res => res.json())
+  //     .then(response => {
+  //       // console.log(response)
+  //       if (response.errors){
+  //         alert(response.errors)
+  //       } else {
+  //         this.setState({
+  //           currentUser: response
+  //         })
+  //       }
+  //     })
+  //   }
+  // }
 
   logout = () => {
-    this.setState({
-      currentUser: null
-    }, () => {
-      localStorage.removeItem("token")
-      this.props.history.push("/login")
-    })
+      this.setState({
+        currentUser: null
+      }, () => {
+        localStorage.removeItem("token")
+        this.props.history.push("/login")
+      })
+    
   }
 
   handleSearchChange = (event) => {
@@ -101,8 +128,7 @@ class App extends React.Component {
    }
 
   render(){  
-
-    // console.log(this.state.visited)
+    // this.checkLogIn()
 
     return (
       <div className="App">

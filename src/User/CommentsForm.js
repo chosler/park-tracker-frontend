@@ -1,4 +1,5 @@
 import React from 'react';
+import Plus from './plus-square.svg';
 
 const initialState={
     comment_content: ''
@@ -35,8 +36,8 @@ class CommentForm extends React.Component {
     render(){
         return (
             <form className='comments-form'>
-                <input type='text' name='comment_content' value={this.state.comment_content} onChange={this.handleInput}/>
-                <button className='comment-submit' type="submit" onClick={this.handleSubmit}>comment</button>
+                <input className='comment-bar' type='text' name='comment_content' value={this.state.comment_content} onChange={this.handleInput}/>
+                <img className='comment-submit' src={Plus} type="submit" onClick={this.handleSubmit}/>
             </form>
     )}
 }
