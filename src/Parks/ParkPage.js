@@ -5,7 +5,7 @@ import mapboxgl from 'mapbox-gl';
 // import { render } from '@testing-library/react';
 import WeatherData from './WeatherData'
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiY21zdGllIiwiYSI6ImNrZDR0bjFueTFjcGwydmw1Z3lzMmU3cjkifQ.5GFJJQm0SbrFXDj79VlpMA';
+mapboxgl.accessToken = process.env.REACT_APP_MAP_API_KEY;
 
 
 class ParkPage extends React.Component {

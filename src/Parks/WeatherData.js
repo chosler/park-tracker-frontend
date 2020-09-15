@@ -1,7 +1,7 @@
 import React from 'react';
 import WeatherForeCard from './WeatherForeCard';
 
-const weatherApiToken = '208b3b7be7768ae6d6a78cb08682333f'
+const weatherApiToken = process.env.REACT_APP_WEATHER_API_KEY
 
 class WeatherData extends React.Component{
 
