@@ -1,8 +1,5 @@
 import React, { useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
-// import React from 'react';
-// import { render } from '@testing-library/react';
-// import { render } from '@testing-library/react';
 import WeatherData from './WeatherData'
 
 mapboxgl.accessToken = process.env.REACT_APP_MAP_API_KEY;
@@ -64,7 +61,6 @@ class ParkPage extends React.Component {
    render(){ 
     let filteredComments = this.props.comments.filter(comment => comment.park_id === parseInt(this.props.match.params.id))
 
-    // console.log(this.map)
        return (
         <>
           {this.state.currentPage ? (
