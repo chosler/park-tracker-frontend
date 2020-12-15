@@ -81,29 +81,6 @@ class App extends React.Component {
       this.setState({comments: res2})
     })
   }
-  
-  // checkLogIn=()=>{
-  //   const token = localStorage.token
-  //   console.log(token)
-  //   if(token){
-  //     fetch("http://localhost:3001/api/v1/auto_login", {
-  //       headers: {
-  //         "Authorization": token
-  //       }
-  //     })
-  //     .then(res => res.json())
-  //     .then(response => {
-  //       // console.log(response)
-  //       if (response.errors){
-  //         alert(response.errors)
-  //       } else {
-  //         this.setState({
-  //           currentUser: response
-  //         })
-  //       }
-  //     })
-  //   }
-  // }
 
   logout = () => {
       this.setState({
@@ -128,7 +105,6 @@ class App extends React.Component {
    }
 
   render(){  
-    // this.checkLogIn()
 
     return (
       <div className="App">
