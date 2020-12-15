@@ -11,10 +11,8 @@ const UserControls=(props)=>{
         (<>
         <div>Welcome {props.currentUser.user_name}</div>
         <img src={logout} onClick={props.logout}/>
-        {/* <button onClick={props.logout}>Logout</button> */}
         </>) :
         (<>
-        {/* <Link to="/login"><button className="login">LOGIN</button></Link> */}
         <Link to="/login" className='login'><img src={login}/></Link>
         <Link to="/signup"className='signup'><img src={userplus}/></Link>
         </>) }
