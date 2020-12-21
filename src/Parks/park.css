@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap');
 
+/*user card page*/
 .user-page{
     font-family: 'Raleway', sans-serif;
     margin-top: 80px;
@@ -12,7 +13,7 @@
     display: inline-block;
     color: #032E50;
     margin-left: 18.5rem;
-    /* margin-top: -31px; */
+
 }
 .usercard-comments {
     list-style-type: none;
@@ -21,26 +22,20 @@
     font-size: 16px;
     font-weight: 300;
     color: #2f5069f8;
-    /* margin-top: -20px; */
   }
   .comments-form{
     text-align: left;
     padding-left: 5px;
-    /* width: 500px; */
   }
   .comment-bar{
-    /* display: inline; */
     width: 260px;
   }
   .comment-submit{
-    /* display: inline; */
-    /* width: 200px; */
     height: 25px;
-    /* margin-top: 10px; */
   }
 
 
-/* park index */
+  /*park cards page*/
 .park-index-page{
     font-family: 'Raleway', sans-serif;
     margin-top: 80px;
@@ -73,8 +68,6 @@
     width:35px
 }
 
-
-/* park cards */
 .park-card {
   text-align: center;
   border: rgba(16, 59, 73, 0.952);
@@ -88,7 +81,6 @@
 .more-info-button{
     color: #032E50;
     display: inline-block;
-    /* margin-top: -20px; */
 }
 .add-button{
     display: inline-block;
@@ -124,7 +116,6 @@
     font-size: 17px;
     font-weight: 600;
     color: #033861f8;
-    /* margin-top: -20px; */
   }
 .card-comments {
     list-style-type: none;
@@ -141,29 +132,22 @@
   }
 
 
-/* map container */
 .map-view {
     position: relative;
     height: 45rem;
     width: 90rem;
     top: 10px;
-    /* display: block; */
-    /* margin-left: auto; */
     margin-right: 80px;
     }
 
 
-/* park-page main*/
+
+/*single park page*/
 .park-page {
 font-family: 'Raleway', sans-serif;
-  /* margin: 5px; */
   margin-top: 80px;
   margin-left: 30px;
   margin-right: 30px;
-  /* display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; */
 }
 
 .park-page-image {  
@@ -240,8 +224,6 @@ font-family: 'Raleway', sans-serif;
 
 /* park-page weather*/
   .weatherBox {
-    /* margin-left: 50px;
-    margin-right: 50px; */
     margin-top: 40px;
     padding-left: 30px;
     padding-right: 20px;
@@ -305,15 +287,11 @@ font-family: 'Raleway', sans-serif;
     float: left;
     align-self: center;
     align-items: center;
-    /* height: 470px; */
     width: 14%;
     padding: 1 1px;
-    /* border-width: 1px; */
     border: black;
-    /* border-style: solid; */
   }
   .dateTime{
-    /* margin-top: -10px; */
     margin-left: 45px;
     font-weight: 700;
   }
@@ -348,17 +326,10 @@ font-family: 'Raleway', sans-serif;
     height: 500px;
     width: 1000px;
     top: 30px;
-    /* left: 220px; */
     bottom: 30px;
     margin-left: auto;
     margin-right: auto;
     }
-
-
-
-
-
-
 
 .sidebarStyle {
   display: inline-block;

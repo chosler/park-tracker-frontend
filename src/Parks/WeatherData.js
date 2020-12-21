@@ -22,8 +22,6 @@ class WeatherData extends React.Component{
                 this.setState({
                     currTemp: weatherData.current.temp,
                     feelsLike: weatherData.current.feels_like,
-                    // minTemp: weatherData.main.temp_min,
-                    // maxTemp: weatherData.main.temp_max,
                     icon: weatherData.current.weather[0].icon,
                     mainCond: weatherData.current.weather[0].main,
                     sevenDayFore: weatherData.daily
@@ -31,28 +29,26 @@ class WeatherData extends React.Component{
         )
        }
        render(){
-        //    const newForearr = {...this.state.sevenDayFore}
-        //    console.log(newForearr);
-       return(
-           <div>
-           <div className="weatherBox">
-                <h3 className='weather-statement'>The current weather conditions at {this.props.name} are:</h3>
-               <img className='weatherIcon' src={`http://openweathermap.org/img/wn/${this.state.icon}@2x.png`} alt={this.state.mainCond} />
-               <div className='current-weather'>
-                   <h3 className='currentWeatherData'>{this.state.mainCond}</h3>
-                   <p className='weatherDataName'>Current temperature: </p>
-                   <h3 className='weatherData'>{this.state.currTemp}°F</h3>
-                   <p className='weatherDataName'>Feels like: </p>
-                   <h3 className='weatherData'>{this.state.feelsLike}°F</h3>
-               </div>
-               <h4 className='seven-day-text'>Seven Day Forecast</h4>
-               <main className='forecast-main'>
-               {this.state.sevenDayFore.slice(1).map(day => <WeatherForeCard key={day.index} {...day}/> 
-               )}
-               </main>
-           </div>
-           </div>
-       )}
+        return(
+            <div>
+            <div className="weatherBox">
+                    <h3 className='weather-statement'>The current weather conditions at {this.props.name} are:</h3>
+                <img className='weatherIcon' src={`http://openweathermap.org/img/wn/${this.state.icon}@2x.png`} alt={this.state.mainCond} />
+                <div className='current-weather'>
+                    <h3 className='currentWeatherData'>{this.state.mainCond}</h3>
+                    <p className='weatherDataName'>Current temperature: </p>
+                    <h3 className='weatherData'>{this.state.currTemp}°F</h3>
+                    <p className='weatherDataName'>Feels like: </p>
+                    <h3 className='weatherData'>{this.state.feelsLike}°F</h3>
+                </div>
+                <h4 className='seven-day-text'>Seven Day Forecast</h4>
+                <main className='forecast-main'>
+                {this.state.sevenDayFore.slice(1).map(day => <WeatherForeCard key={day.index} {...day}/> 
+                )}
+                </main>
+            </div>
+            </div>
+        )}
 }
 
 export default WeatherData

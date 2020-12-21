@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import UserControls from './UserControls'
 
 const Navbar = props => {
-    // console.log(props)
     return (
         <div className="navbar">
             <Link to="/" className='nav-menu'>Home</Link>

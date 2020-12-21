@@ -10,7 +10,6 @@ const WeatherForeCard = props => {
         let convdataTime = month+' '+day
         return convdataTime
     }
-    // console.log(convertDateTime(props.dt));
     return(
         <div className='forecast-card'>
             <h4 className='dateTime'>{convertDateTime(props.dt)}</h4>

@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap');
 
-
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-
 /* navbar styling */
 .navbar {
   position: fixed;
@@ -36,7 +26,6 @@
   color: inherit;
   text-decoration: inherit;
   display: block;
-  /* text-align: center; */
   padding: 18px 60px;
 }
 

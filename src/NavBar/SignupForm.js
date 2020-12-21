@@ -6,8 +6,7 @@ class SignupForm extends React.Component {
     user_name: "",
     password: "",
     passwordConfirm: "",
-    name: "",
-    // profile_pic: ""
+    name: ""
   }
 
   handleChange = (event) => {
@@ -28,7 +27,6 @@ class SignupForm extends React.Component {
             body: JSON.stringify({
                 user_name: this.state.user_name, 
                 name: this.state.name,
-                // profile_pic: this.state.profile_pic,
                 password: this.state.password
             })
           })
@@ -46,7 +44,6 @@ class SignupForm extends React.Component {
 }
 
   render() {
-    //   console.log(this.state)
     return (
         <div className='signup-page'>
              <video autoPlay="autoplay" muted

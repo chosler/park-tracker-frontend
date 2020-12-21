@@ -57,7 +57,7 @@ class App extends React.Component {
 
   handleNewComment=(newComment)=>{
     this.setState({comments:[...this.state.comments, newComment]})
-    // console.log(this.state.comments)
+
   }
 
   setUser = (response) => {
@@ -66,7 +66,7 @@ class App extends React.Component {
         userId: response.user.id
       },
        () => {
-        // let jtwTok = response.headers.get('Authorization')
+
         localStorage.setItem("token", response.token )
         this.props.history.push("/parks")
       })
@@ -81,29 +81,6 @@ class App extends React.Component {
       this.setState({comments: res2})
     })
   }
-  
-  // checkLogIn=()=>{
-  //   const token = localStorage.token
-  //   console.log(token)
-  //   if(token){
-  //     fetch("http://localhost:3001/api/v1/auto_login", {
-  //       headers: {
-  //         "Authorization": token
-  //       }
-  //     })
-  //     .then(res => res.json())
-  //     .then(response => {
-  //       // console.log(response)
-  //       if (response.errors){
-  //         alert(response.errors)
-  //       } else {
-  //         this.setState({
-  //           currentUser: response
-  //         })
-  //       }
-  //     })
-  //   }
-  // }
 
   logout = () => {
       this.setState({
@@ -128,7 +105,6 @@ class App extends React.Component {
    }
 
   render(){  
-    // this.checkLogIn()
 
     return (
       <div className="App">

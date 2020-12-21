@@ -8,13 +8,5 @@ ReactDOM.render(
 <Router><Route path="/" render={(routerProps) => <App {...routerProps}/>}/></Router>, 
 document.getElementById('root'));
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Router >
-//     <App />
-//     </Router>
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 
 
