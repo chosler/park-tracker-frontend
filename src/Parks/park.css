@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap');
 
+/*user card page*/
 .user-page{
     font-family: 'Raleway', sans-serif;
     margin-top: 80px;
@@ -34,6 +35,7 @@
   }
 
 
+  /*park cards page*/
 .park-index-page{
     font-family: 'Raleway', sans-serif;
     margin-top: 80px;
@@ -139,6 +141,8 @@
     }
 
 
+
+/*single park page*/
 .park-page {
 font-family: 'Raleway', sans-serif;
   margin-top: 80px;
