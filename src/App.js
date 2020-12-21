@@ -57,7 +57,7 @@ class App extends React.Component {
 
   handleNewComment=(newComment)=>{
     this.setState({comments:[...this.state.comments, newComment]})
-    // console.log(this.state.comments)
+
   }
 
   setUser = (response) => {
@@ -66,7 +66,7 @@ class App extends React.Component {
         userId: response.user.id
       },
        () => {
-        // let jtwTok = response.headers.get('Authorization')
+
         localStorage.setItem("token", response.token )
         this.props.history.push("/parks")
       })
